@@ -63,6 +63,12 @@ function append_to_be_posts( $output ) {
 	return $output;
 }
 
-add_filter( 'display_posts_shortcode_output', 'append_to_be_posts' );
+add_shortcode( 'list-remote-comments', 'append_remote_comments_to_be_posts_shortcode', 9 );
+
+function append_remote_comments_to_be_posts_shortcode(){
+	
+	add_filter( 'display_posts_shortcode_output', 'append_to_be_posts', 9 );
+
+}
 	
 ?>
