@@ -45,3 +45,12 @@ list_remote_comments( false, true, true, true, 5, true)
 #### notes
 
 Based on [Remote Comments](http://wrapping.marthaburtis.net/2014/03/25/remote-comments-plugin-a-fwp-addon/) plugin by Martha Burtis
+
+
+#### changelog
+
+**v 1.1**
+
+ * added proper cache
+ * more aggressive at 3600
+ * added more style classes

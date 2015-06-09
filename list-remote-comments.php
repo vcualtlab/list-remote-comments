@@ -3,7 +3,7 @@
  * Plugin Name: List Remote Comments (FeedWordPress Addon)
  * Plugin URI: 
  * Description: This plugin works with FeedWordPress and Display Posts Shortcode to display comments on the "host" content provider.
- * Version: 1.0	
+ * Version: 1.1	
  * Author: Mark Luetke
  * Author URI: http://luetkemj.github.io/
  * License: GPL2
@@ -29,7 +29,7 @@ function list_remote_comments(
 			$current_stamp = date('U');
 			$stamp_difference = $current_stamp - $lrc_last_count_stamp[0];		
 			
-			if ($stamp_difference > '600'){
+			if ($stamp_difference > '3600'){
 				$comments_url = get_post_meta($id, 'wfw:commentRSS', true);  
 				$comments_rss = fetch_feed($comments_url);
 				
