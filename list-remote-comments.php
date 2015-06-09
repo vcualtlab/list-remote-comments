@@ -23,6 +23,7 @@ function list_remote_comments(
 	if (is_syndicated()) { 
 		
 		if (get_post_meta($id, 'wfw:commentRSS')) { 
+			
 			$lrc_output = get_post_meta($id, 'lrc_comment_list', true);
 			$lrc_last_count_stamp = get_post_meta($id, 'lrc_comment_list_stamp', true);
 			$current_stamp = date('U');
@@ -53,7 +54,7 @@ function list_remote_comments(
 					endfor;
 					$lrc_output .= "</ul>";
 
-					update_post_meta($id, 'lrc_comment_list', $lrc_comment_list);
+					update_post_meta($id, 'lrc_comment_list', $lrc_output);
 			        update_post_meta($id, 'lrc_comment_list_stamp', date('U'));
 				}
 		    } 
