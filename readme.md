@@ -28,28 +28,10 @@ Alternately you can use the template tag ```list_remote_comments()``` to display
 
 Default Arguments:
 
-**$title**
-default: false
-Outputs title - Boolean
-
-
-**$date**
-default: true
-Outputs Date - Boolean
-
-
-**$link**
-default: true
-Wrap title in permalink to post
-
-
-**$max_number**
-default: null
-Set max limit of comments to display
-
-
-**$dispay_list_title**
-default: true
-Display "Comments: " before list
-
-
+| Argument        		 | Default  | Type      | Description   
+| ---------------------- | -------- | --------- | ------------- 
+| **$title**      		 | false    | Boolean   | Outputs title
+| **$date**       		 | true     | Boolean   | Outputs Date
+| **$link**       		 | true     | Boolean   | Wrap title in permalink to post
+| **$max_number** 		 | null     | Number    | Set max limit of comments to display
+| **$dispay_list_title** | true     | Boolean   | Display "Comments: " before list
