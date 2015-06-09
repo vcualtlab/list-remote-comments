@@ -9,8 +9,6 @@
  * License: GPL2
  */
 
-// add_filter('get_comments_number', 'rc_comment_count', 10, 2);
-
 function list_remote_comments( $comment = false, $title = true, $date = true, $link = true, $max_number = null, $dispay_list_title = true ){
 	global $id;
 	$count = '';
