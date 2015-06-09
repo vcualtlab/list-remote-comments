@@ -33,20 +33,20 @@ function list_remote_comments(
 				$comments_rss = fetch_feed($comments_url);
 				
 				if (!is_wp_error($comments_rss)) { 
-					$lrc_output = "<ul>";
+					$lrc_output = "<ul class='list-remote-comments'>";
 					
-					if ( $dispay_list_title ){ $lrc_output .= "<strong>Comments: </strong>"; }
+					if ( $dispay_list_title ){ $lrc_output .= "<strong class='list-heading'>Comments: </strong>"; }
 
 					$max = $comments_rss->get_item_quantity($max_number);
 					for ($x = 0; $x < $max; $x++):
 						$item = $comments_rss->get_item($x);
 						
-						$lrc_output .= "<li>";
-						if ( $link ) { $lrc_output .= "<a href='".$item->get_permalink()."'>"; }
-							if ( $title ) { $lrc_output .= $item->get_title(); }
+						$lrc_output .= "<li class='list-item'>";
+						if ( $link ) { $lrc_output .= "<a class='permalink' href='".$item->get_permalink()."'>"; }
+							if ( $title ) { $lrc_output .= "<span class='author'>".$item->get_title()."</span>"; }
 						if ( $link ) { $lrc_output .= "</a>"; }
-						if ( $date ){ $lrc_output .= " <small>&#9755; ".$item->get_date('F j, Y | g:i a')."</small>"; }
-						if ( $comment ){ $lrc_output .= "<p>".$item->get_description()."</p>"; }
+						if ( $date ){ $lrc_output .= " <small class='date'>&#9755; ".$item->get_date('F j, Y | g:i a')."</small>"; }
+						if ( $comment ){ $lrc_output .= "<p class='comment'>".$item->get_description()."</p>"; }
 						$lrc_output .= "</li>";
 
 					endfor;
