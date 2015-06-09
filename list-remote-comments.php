@@ -18,21 +18,22 @@ function list_remote_comments(
 	$dispay_list_title = true ){
 	
 	global $id;
-	$count = '';
+	$lrc_comment_list = '';
 	
 	if (is_syndicated()) { 
 		
 		if (get_post_meta($id, 'wfw:commentRSS')) { 
-			$count = get_post_meta($id, 'lrc_comment_count', true);
-			
-			$lrc_last_count_stamp = get_post_meta($id, 'lrc_comment_count_stamp', true);
+			$lrc_output = get_post_meta($id, 'lrc_comment_list', true);
+			$lrc_last_count_stamp = get_post_meta($id, 'lrc_comment_list_stamp', true);
 			$current_stamp = date('U');
 			$stamp_difference = $current_stamp - $lrc_last_count_stamp[0];		
+			
 			if ($stamp_difference > '600'){
 				$comments_url = get_post_meta($id, 'wfw:commentRSS', true);  
 				$comments_rss = fetch_feed($comments_url);
 				
 				if (!is_wp_error($comments_rss)) { 
+					
 					$lrc_output = "<ul class='list-remote-comments'>";
 					
 					if ( $dispay_list_title ){ $lrc_output .= "<strong class='list-heading'>Comments: </strong>"; }
@@ -52,8 +53,8 @@ function list_remote_comments(
 					endfor;
 					$lrc_output .= "</ul>";
 
-					update_post_meta($id, 'lrc_comment_count', $count);
-			        update_post_meta($id, 'lrc_comment_count_stamp', date('U'));
+					update_post_meta($id, 'lrc_comment_list', $lrc_comment_list);
+			        update_post_meta($id, 'lrc_comment_list_stamp', date('U'));
 				}
 		    } 
 		
