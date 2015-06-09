@@ -19,7 +19,7 @@ When used in conjunction with [Display Posts Shortcode](https://github.com/bille
 ```
 
 **IMPORTANT**
-List-remote-comments shortcode MUST COME BEFORE display-posts shortcode. It will not work otherwise.
+[list-remote-comments] shortcode MUST COME BEFORE [display-posts] shortcode. It will not work otherwise.
 
 
 ## Template Tag
@@ -29,37 +29,27 @@ Alternately you can use the template tag ```list_remote_comments()``` to display
 Default Arguments:
 
 **$title**
-
 default: false
-
 Outputs title - Boolean
 
 
 **$date**
-
 default: true
-
 Outputs Date - Boolean
 
 
 **$link**
-
 default: true
-
 Wrap title in permalink to post
 
 
 **$max_number**
-
 default: null
-
 Set max limit of comments to display
 
 
 **$dispay_list_title**
-
 default: true
-
 Display "Comments: " before list
 
 
