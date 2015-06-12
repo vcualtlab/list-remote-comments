@@ -15,6 +15,7 @@ function list_remote_comments(
 	$date = true, 
 	$link = true, 
 	$max_number = null, 
+	$lrc_output = '',
 	$dispay_list_title = true ){
 	
 	global $id;
