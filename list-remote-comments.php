@@ -14,9 +14,11 @@ function list_remote_comments(
 	$title = true, 
 	$date = true, 
 	$link = true, 
-	$max_number = null, 
-	$lrc_output = '',
-	$dispay_list_title = true ){
+	$max_number = null,
+	$dispay_list_title = true,
+	$cache = 43200, 
+	$lrc_output = '')
+	{
 	
 	global $id;
 	$lrc_comment_list = '';
@@ -26,11 +28,13 @@ function list_remote_comments(
 		if (get_post_meta($id, 'wfw:commentRSS')) { 
 			
 			$lrc_output = get_post_meta($id, 'lrc_comment_list', true);
+
 			$lrc_last_count_stamp = get_post_meta($id, 'lrc_comment_list_stamp', true);
-			$current_stamp = date('U');
-			$stamp_difference = $current_stamp - $lrc_last_count_stamp[0];		
 			
-			if ($stamp_difference > '3600'){
+			$current_stamp = date('U');
+			$stamp_difference = $current_stamp - $lrc_last_count_stamp;		
+
+			if ($stamp_difference > $cache){
 				$comments_url = get_post_meta($id, 'wfw:commentRSS', true);  
 				$comments_rss = fetch_feed($comments_url);
 				
