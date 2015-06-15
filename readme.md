@@ -40,6 +40,7 @@ list_remote_comments( false, true, true, true, 5, true)
 | **$link**       		 | true     | Boolean   | Wrap title in permalink to post
 | **$max_number** 		 | null     | Number    | Set max limit of comments to display
 | **$dispay_list_title** | true     | Boolean   | Display "Comments: " before list
+| **$cache**             | 43200    | Number    | Cache in seconds
 
 
 #### notes
@@ -48,6 +49,12 @@ Based on [Remote Comments](http://wrapping.marthaburtis.net/2014/03/25/remote-co
 
 
 #### changelog
+
+**v 1.2**
+
+ * fix cache bug
+ * upgrade cache to every 12 hours 
+ * add argument for cache
 
 **v 1.1**
 
