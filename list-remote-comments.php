@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: List Remote Comments (FeedWordPress Addon)
- * Plugin URI: 
+ * Plugin URI: https://github.com/vcualtlab/list-remote-comments
  * Description: This plugin works with FeedWordPress and Display Posts Shortcode to display comments on the "host" content provider.
  * Version: 1.1	
  * Author: Mark Luetke

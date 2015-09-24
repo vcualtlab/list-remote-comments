@@ -15,7 +15,7 @@ When used in conjunction with [Display Posts Shortcode](https://github.com/bille
 ```
 [list-remote-comments]
 
-[display-posts arguments= ... ]
+[display-posts category= ... ]
 ```
 
 **IMPORTANT**
